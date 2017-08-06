@@ -1,0 +1,32 @@
+from tpot import TPOTClassifier
+from sklearn.datasets import load_digits
+from sklearn.model_selection import train_test_split
+import pickle
+import pandas as pd
+import numpy as np
+
+train = pd.read_csv("/home/abhishek/hackerearth/Road_sign/data/train.csv")
+mapping = {'Front':0, 'Right':1, 'Left':2, 'Rear':3}
+train = train.replace({'DetectedCamera':mapping})
+
+train.rename(columns = {'SignFacing (Target)': 'Target'}, inplace=True)
+
+mapping = {'Front':0, 'Left':1, 'Rear':2, 'Right':3}
+train = train.replace({'Target':mapping})
+target = np.array(train['Target'])
+
+train.drop(['Target','Id','SignWidth'], inplace=True, axis=1)
+
+train = np.array(train)
+
+#test_data_file = open("test.pickle" , "rb")
+#test_data = pickle.load(test_data_file)
+#test_data_file.close()
+
+X_train, X_test, y_train, y_test = train_test_split(train, target, train_size=0.6, random_state = 1)
+
+tpot = TPOTClassifier(generations=5, population_size=20, verbosity=2)
+tpot.fit(X_train,y_train)
+print(tpot.score(X_test, y_test))
+tpot.export('tpot_mnist_pipeline.py')
+

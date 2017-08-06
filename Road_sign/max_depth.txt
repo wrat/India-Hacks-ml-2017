@@ -1,0 +1,6 @@
+Best: -0.103450 using {'max_depth': 5}
+-0.133964 (0.005306) with: {'max_depth': 1}
+-0.104916 (0.006755) with: {'max_depth': 3}
+-0.103450 (0.007047) with: {'max_depth': 5}
+-0.106652 (0.006826) with: {'max_depth': 7}
+-0.111505 (0.007116) with: {'max_depth': 9}

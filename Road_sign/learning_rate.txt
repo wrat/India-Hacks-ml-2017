@@ -1,0 +1,7 @@
+Best: -0.103205 using {'learning_rate': 0.2}
+-1.368217 (0.000045) with: {'learning_rate': 0.0001}
+-1.221161 (0.000410) with: {'learning_rate': 0.001}
+-0.494938 (0.002664) with: {'learning_rate': 0.01}
+-0.104916 (0.006755) with: {'learning_rate': 0.1}
+-0.103205 (0.007006) with: {'learning_rate': 0.2}
+-0.104157 (0.007156) with: {'learning_rate': 0.3}

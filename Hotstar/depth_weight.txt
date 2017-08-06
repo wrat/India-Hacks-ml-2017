@@ -1,0 +1,13 @@
+Best: -0.225716 using {'max_depth': 3, 'min_child_weight': 3}
+-0.225743 (0.001640) with: {'max_depth': 3, 'min_child_weight': 1}
+-0.225716 (0.001631) with: {'max_depth': 3, 'min_child_weight': 3}
+-0.225726 (0.001629) with: {'max_depth': 3, 'min_child_weight': 5}
+-0.225954 (0.001718) with: {'max_depth': 5, 'min_child_weight': 1}
+-0.225847 (0.001716) with: {'max_depth': 5, 'min_child_weight': 3}
+-0.225950 (0.001677) with: {'max_depth': 5, 'min_child_weight': 5}
+-0.227077 (0.001867) with: {'max_depth': 7, 'min_child_weight': 1}
+-0.227059 (0.001700) with: {'max_depth': 7, 'min_child_weight': 3}
+-0.227007 (0.001609) with: {'max_depth': 7, 'min_child_weight': 5}
+-0.229542 (0.002088) with: {'max_depth': 9, 'min_child_weight': 1}
+-0.228835 (0.001807) with: {'max_depth': 9, 'min_child_weight': 3}
+-0.228457 (0.001835) with: {'max_depth': 9, 'min_child_weight': 5}

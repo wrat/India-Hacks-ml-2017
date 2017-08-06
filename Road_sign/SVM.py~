@@ -1,0 +1,40 @@
+import pandas as pd
+import numpy as np
+from sklearn import svm
+
+train = pd.read_csv("/home/abhishek/hackerearth/Road_sign/data/train.csv")
+test = pd.read_csv("/home/abhishek/hackerearth/Road_sign/data/test.csv")
+
+mapping = {'Front':0, 'Right':1, 'Left':2, 'Rear':3}
+train = train.replace({'DetectedCamera':mapping})
+test = test.replace({'DetectedCamera':mapping})
+
+train.rename(columns = {'SignFacing (Target)': 'Target'}, inplace=True)
+
+mapping = {'Front':0, 'Left':1, 'Rear':2, 'Right':3}
+train = train.replace({'Target':mapping})
+
+#Adding New Column in Training Dataset
+observed_ratio_train = train['SignWidth'] / train['SignHeight']
+observed_ratio_test = test['SignWidth'] / test['SignHeight']
+
+y_train = np.array(train['Target'])
+test_id = test['Id']
+
+
+train.drop(['Target','Id'], inplace=True, axis=1)
+test.drop('Id',inplace=True,axis=1)
+
+
+train= np.array(train)
+test = np.array(test)
+
+clf = svm.SVC(gamma = 0.001 ,C=50,probability=True)
+clf.fit(train,y_train)
+
+pred = clf.predict_proba(test)
+columns = ['Front','Left','Rear','Right']
+sub = pd.DataFrame(data=pred, columns=columns)
+sub['Id'] = test_id
+sub = sub[['Id','Front','Left','Rear','Right']]
+sub.to_csv("final.csv", index=False)

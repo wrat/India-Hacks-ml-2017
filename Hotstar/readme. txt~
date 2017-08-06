@@ -1,0 +1,14 @@
+Features :
+	I have used same features as provided in starter script. After analyzing Found some features are not important.
+	like ['1','2','3','4','5','6','7','Science','Hockey','Wildlife','Reality','Badminton','Travel','Thriller','Horror','dow_count'].
+	so Removed them.
+	Also found 'title_count' is not too normalized.So apply log transformation.
+
+Machine learning Model - 
+	I have apply XGBClassifier().Also tune parameter found at learning rate 0.2 model performanance is optimal.
+	I hava also plot learning curves for n_estimators ,learning_rate.
+
+Files Information- 
+	1.) Hotstar_XGBOOST_Script.ipynb , all preprocessing steps and training code reside in this.
+	2.) XG_Final.csv - model prediction over testing data.
+

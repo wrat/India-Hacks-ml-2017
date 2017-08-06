@@ -1,0 +1,9 @@
+Best: -0.103011 using {'n_estimators': 200}
+-0.113796 (0.005909) with: {'n_estimators': 50}
+-0.104916 (0.006755) with: {'n_estimators': 100}
+-0.103353 (0.006888) with: {'n_estimators': 150}
+-0.103011 (0.006967) with: {'n_estimators': 200}
+-0.103282 (0.007049) with: {'n_estimators': 250}
+-0.103670 (0.007207) with: {'n_estimators': 300}
+-0.104147 (0.007144) with: {'n_estimators': 350}
+
